@@ -1,0 +1,21 @@
+***************************** Testing *************************
+/usr/sbin/sendmail
+RUBANS
+awerty31
+147.152.152.92
+1521
+eeh
+eehsupport@bt.com
+eehsupport@bt.com,selvaraj.ruban@bt.com,noorjahan.ghani@bt.com
+selvaraj.ruban@bt.com
+EEH
+/home/eeh/ASG_SCRIPTS_DIR/dbhealth
+************************* Test Complete ***************************
+RUBANS/awerty31@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=147.152.152.92)(Port=1521))(CONNECT_DATA=(SID=eeh)))
+Connected
+
+
+
+
+
+
