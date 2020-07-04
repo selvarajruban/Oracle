@@ -1,0 +1,71 @@
+<HTML><HEAD><TITLE>DB Health Report</TITLE><style type=text/css>body.awr {font:bold 8pt Arial,Helvetica,Geneva,sans-serif;color:black; background:White;}
+pre.awr  {font:8pt Courier;color:black; background:White;}h1.awr   {font:bold 20pt Arial,Helvetica,Geneva,sans-serif;color:#336699;background-color:White;border-bottom:1px solid #cccc99;margin-top:0pt; margin-bottom:0pt;padding:0px 0px 0px 0px;}
+h2.awr   {font:bold 18pt Arial,Helvetica,Geneva,sans-serif;color:#336699;background-color:White;margin-top:4pt; margin-bottom:0pt;}
+h3.awr {font:bold 16pt Arial,Helvetica,Geneva,sans-serif;color:#336699;background-color:White;margin-top:4pt; margin-bottom:0pt;}li.awr {font: 8pt Arial,Helvetica,Geneva,sans-serif; color:black; background:White;}
+th.awrnobg {font:bold 8pt Arial,Helvetica,Geneva,sans-serif; color:black; background:White;padding-left:4px; padding-right:4px;padding-bottom:2px}th.awrbg {font:bold 8pt Arial,Helvetica,Geneva,sans-serif; color:White; background:#0066CC;padding-left:4px; padding-right:4px;padding-bottom:2px}
+td.awrnc {font:8pt Arial,Helvetica,Geneva,sans-serif;color:black;background:White;vertical-align:top;}
+td.awrc    {font:8pt Arial,Helvetica,Geneva,sans-serif;color:black;background:#FFFFCC; vertical-align:top;}a.awr {font:bold 8pt Arial,Helvetica,sans-serif;color:#663300; vertical-align:top;margin-top:0pt; margin-bottom:0pt;}
+</style>
+</HEAD>
+
+<BODY class='awr'>
+	<H1 class='awr'>
+	Database Health Check Report
+	</H1>
+	<br>
+<br><H3 class='awr'>
+	Tablespace Report
+</H3>
+	<P>
+<TABLE BORDER=1 WIDTH=800 id =ts1>
+	<TR><TH class='awrbg'>TABLESPACE NAME</TH><TH class='awrbg'>TOTAL SIZE (MB)</TH><TH class='awrbg'>USED (MB)</TH><TH class='awrbg'> FREE (MB)</TH><TH class='awrbg'> USED % </TH></TR>
+<tr bgcolor=RED><td>EEH_INDEXES</td><td>5634</td><td>4629</td><td>1005</td><td>82</td></tr>
+<tr bgcolor=YELLOW><td>EEH_AUDIT</td><td>3533</td><td>2701</td><td>832</td><td>76</td></tr>
+<tr bgcolor=YELLOW><td>SYSAUX</td><td>500</td><td>263</td><td>237</td><td>53</td></tr>
+<tr><td>EEH_AUDIT_2</td><td>3325</td><td>1618</td><td>1707</td><td>49</td></tr>
+<tr><td>SYSTEM</td><td>500</td><td>240</td><td>260</td><td>48</td></tr>
+<tr><td>EEH_PIRS</td><td>5321</td><td>2531</td><td>2790</td><td>48</td></tr>
+<tr><td>SYS_AUDIT</td><td>300</td><td>109</td><td>191</td><td>36</td></tr>
+<tr><td>RBS</td><td>2224</td><td>720</td><td>1504</td><td>32</td></tr>
+<tr><td>EEH_INDEXES_2</td><td>2970</td><td>815</td><td>2155</td><td>27</td></tr>
+<tr><td>USERS</td><td>569</td><td>150</td><td>419</td><td>26</td></tr>
+<tr><td>EEH</td><td>8096</td><td>2033</td><td>6063</td><td>25</td></tr>
+<tr><td>SPOTLIGHT_DATA</td><td>500</td><td>18</td><td>482</td><td>4</td></tr>
+<tr><td>DBA_UTILITIES</td><td>10</td><td>0</td><td>10</td><td>1</td></tr>
+</TABLE></P>
+<br><H3 class=awr>TEMP Tablespace</H3>
+<P>
+	<TABLE BORDER=1 WIDTH=800 id =ts1>
+	<TR><TH class='awrbg'>TABLESPACE NAME</TH><TH class='awrbg'>TOTAL SIZE (Mb)</TH><TH class='awrbg'>USED (Mb)</TH><TH class='awrbg'>FREE SPACE (Mb) 
+</TH></TR>
+<tr><td>TEMP1</td><td>3072</td><td>0</td><td>3072</td></td></tr></table></p>
+</TABLE></P>
+<br><H3 class=awr>EXTENTS Percentage above 40%</H3>
+<P>
+	<TABLE BORDER=1 WIDTH=800 id =ts1>
+		<TR><TH class='awrbg'>OWNER</TH><TH class='awrbg'>SEGMENT_NAME</TH><TH class='awrbg'>SEGMENT TYPE</TH><TH class='awrbg'>EXTENTS
+		</TH> <TH class='awrbg'>MAX_EXTENTS</TH><TH class='awrbg'>PCT%_USED</TH> </TR>
+<tr><td>OPS$EEH</td><td>CONDEMNED_FILES</td><td>TABLE</td><td>250</td><td>500</td><td>50</td></tr>
+</TABLE></P>
+<br><H3 class=awr>Disk Group Space (ASM)</H3>
+<P>
+	<TABLE BORDER=1 WIDTH=800 id =ts1>
+		<TR><TH class='awrbg'>NAME</TH><TH class='awrbg'>TOTAL_GB</TH><TH class='awrbg'>FREE_GB</TH><TH class='awrbg'>USEDPCT
+		</TH></TR>
+</TABLE></P>
+<br><H3 class=awr>Top Wait Events</H3>
+<P>
+	<TABLE BORDER=1 WIDTH=800 id =ts1>
+			<TR><TH class='awrbg'>EVENT NAME</TH><TH class='awrbg'>TOTAL WAITS</TH><TH class='awrbg'>TIME WAITED</TH><TH class='awrbg'>AVG WAIT MS
+					</TH></TR>
+<tr><td>enq: TX - row lock contention</td><td>934204</td><td>268665311</td><td>287.59</td></tr> <tr><td>enq: TM - contention</td><td>17928</td><td>3097542</td><td>172.78</td></tr> <tr><td>library cache lock</td><td>107</td><td>2164</td><td>20.22</td></tr> <tr><td>os thread startup</td><td>32641</td><td>366972</td><td>11.24</td></tr>
+</TABLE></P>
+<br><H3 class=awr>Resource Limits</H3>
+<P>
+	<TABLE BORDER=1 WIDTH=800 id =ts1>
+		<TR><TH class='awrbg'>RESOURCE NAME</TH><TH class='awrbg'>CURRENT UTILIZATION</TH><TH class='awrbg'>MAX UTILIZATION</TH><TH class='awrbg'>INITIAL ALLOCATION</TH><TH class='awrbg'>LIMIT VALUE</TH></TR>
+<tr><td>processes</td><td>33</td><td>77</td><td>200</td><td>200</td></tr>
+<tr><td>sessions</td><td>39</td><td>82</td><td>225</td><td>225</td></tr>
+<tr><td>transactions</td><td>18</td><td>37</td><td>247</td><td>UNLIMITED</td></tr>
+</TABLE></P>
+</body></html>
